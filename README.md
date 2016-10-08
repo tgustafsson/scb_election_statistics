@@ -84,12 +84,25 @@ rust is not far away. If the borrow checker complains, try `&`, `*`, or
 `ref`, and hope it works. This is ofcourse also a result of my 
 inexperience with the language. 
 
+### nim
+
+Nim is a compiled language, which generates C code that is then compiled 
+to machine code. The implementation should be fast. Moreover, the language 
+has overloaded operators and a possibility to write macros, which is 
+utilized by the libraries.
+ 
+Json handling is quite straightforward. The implementation is actually the 
+shortest. It lands in on only 30 lines. It is even short than perl. 
+However, for some reason is the execution time not on par with the other 
+compiled languages.
+
 ## Project helpers
 
 Modern languages are associated with at least one "project helper". For 
 clojure it is _leiningen_, for OCaml it is _ocamlfind_, for java it is 
-_maven_, for rust it is _cargo_. For python and perl, I didn't need one, 
-because the dependencies were already part of the installation I used.
+_maven_, for rust it is _cargo_. For python, perl, and nim, I didn't need 
+one, because the dependencies were already part of the installation I 
+used. 
  
 Both leiningen and cargo are very easy to work with. Maven not so much, 
 but I'm glad it was there anyway, because I'm not very used to java 
@@ -118,6 +131,8 @@ The execution time of the OCaml program is 0.45 seconds.
 The execution time of the Python program is 0.6 seconds.
 
 The execution time of the rust program is 0.43 seconds.
+
+The execution time of the nim program us 0.65 seconds.
 
 What we can see from the above is that the programs seems to be I/O bound, 
 which is not very strange since the program is doing two requests to a 
