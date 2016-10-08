@@ -1,0 +1,9 @@
+[package]
+name = "scb"
+version = "0.1.0"
+authors = ["Thomas Gustafsson <thomas.gustafsson@me.com>"]
+
+[dependencies]
+hyper = "0.9.10"
+rustc-serialize = "0.3.19"
+serde = "0.8.10"
