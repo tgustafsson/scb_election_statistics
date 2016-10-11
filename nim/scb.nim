@@ -13,8 +13,8 @@ var body = %*
      "response" : {"format" : "json"}
    }
 var response = client.post("http://api.scb.se/OV0104/v1/doris/sv/ssd/START/ME/ME0104/ME0104D/ME0104T4", $body)
-var data = parseJson(response.body)["data"]
-var riktnummer_ort = initTable[string, string]()
+var data = parseJson(response.body[3 .. response.body.high])["data"]
+var riktnummer_ort = initTable[string, string](512)
 for i in 0..len(meta["variables"][0]["values"].getElems()) - 1:
   riktnummer_ort[meta["variables"][0]["values"].getElems()[i].getStr()] = meta["variables"][0]["valueTexts"].getElems()[i].getStr()
 var temp = filter(data.getElems(), proc(item : JsonNode):bool=item["values"].getElems()[0].getStr()!="..")
